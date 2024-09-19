@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "簡単にフォームを作れるアドオン\nChestUI: Herobrine643928\n製作:なるる\nYouTube:なるる-Naruru",
+        "name": "EasyForm-RP v1.0.0",
+        "uuid": "154ce143-eac2-4e9c-bdc9-f8912bfa2936",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 21, 20]
+    },
+    "modules": [
+        {
+            "description": "",
+            "type": "resources",
+            "uuid": "670914cf-e931-43a1-96ac-ba0610016aa0",
+            "version": [1, 0, 0]
+        }
+    ]
+}
