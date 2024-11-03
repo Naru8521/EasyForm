@@ -29,6 +29,8 @@ export default async function EventTypeForm(player, preset, showMode, i, backFor
     /** @type {EventType} */
     const newType = config.eventTypes[formValues[0]];
 
+    if (newType === type) return await backForm(player, preset, showMode, i);
+
     switch (newType) {
         case "ChatSend":
             event = util.deepCopyObject(config.chatSendConfig);
