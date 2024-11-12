@@ -2,9 +2,9 @@
     "format_version": 2,
     "header": {
         "description": "簡単にフォームを作れるアドオン\nChestUI: Herobrine643928\n製作:なるる\nYouTube:なるる-Naruru",
-        "name": "EasyForm-BP v1.1.0",
+        "name": "EasyForm-BP v1.1.1",
         "uuid": "74cb81c3-778c-4391-9d44-0c53294c64cc",
-        "version": [1, 1, 0],
+        "version": [1, 1, 1],
         "min_engine_version": [1, 21, 41]
     },
     "modules": [
@@ -13,14 +13,14 @@
             "type": "script",
             "language": "javascript",
             "uuid": "46b829c5-db91-411e-b4de-876df5941c01",
-            "version": [1, 1, 0],
+            "version": [1, 1, 1],
             "entry": "scripts/index.js"
         }
     ],
     "dependencies": [
         {
             "uuid": "154ce143-eac2-4e9c-bdc9-f8912bfa2936",
-            "version": [1, 1, 0]
+            "version": [1, 1, 1]
         },
         {
             "module_name": "@minecraft/server",

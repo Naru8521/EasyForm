@@ -13,6 +13,7 @@ import PreviewModalForm from "./Preview/ModalForm";
 import PreviewMessageForm from "./Preview/MessageForm";
 import ChestFormMenuForm from "./ChestForm/ChestFormMenu";
 import PreviewChestForm from "./Preview/ChestForm";
+import DeleteCheckForm from "./DeleteCheck";
 /// <reference path="../types.js" />
 
 /**
@@ -65,8 +66,7 @@ export default async function MenuForm(player, preset, showMode, err) {
         if (type === "ChestForm") return await PreviewChestForm(player, preset, showMode);
     }
     if (selection === 5 && !isCreateMode) {
-        world.setDynamicProperty(preset.uuid, undefined);
-        player.sendMessage(`${preset.name} %ef.message.delete`);
+        await DeleteCheckForm(player, preset, showMode);
         return;
     }
     if (selection === 5 && isCreateMode) {

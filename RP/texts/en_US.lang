@@ -80,6 +80,7 @@ ef.form.message.newLine=New line with
 ef.form.message.several=Set multiple with
 ef.form.message.eventType=Changing the event type will reset the event settings.
 ef.form.message.slot=Changing the slot will reset the button settings.
+ef.form.message.delete=If you delete the form, you cannot §c undo it §f is that correct?
 
 ef.message.delete=§cDeleted§f
 ef.message.create=Created

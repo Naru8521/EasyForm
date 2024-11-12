@@ -81,6 +81,7 @@ ef.form.message.newLine=で改行
 ef.form.message.several=で複数設定
 ef.form.message.eventType=イベントタイプを変更すると、イベント設定がリセットされます
 ef.form.message.slot=スロットを変更すると、ボタン設定がリセットされます
+ef.form.message.delete=フォームを削除すると§c元に戻すことはできません§fがよろしいですか？
 
 ef.message.delete=を§c削除§fしました
 ef.message.create=を作成しました
