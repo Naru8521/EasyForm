@@ -6,7 +6,9 @@ export class EventCheck {
      * @param {ShowEvent} event 
      */
     static isMessage(message, event) {
-        return !event.message || message === event.message;
+        if (event.message && event.message !== message) return false;
+
+        return true;
     }
 
     /**
@@ -15,11 +17,11 @@ export class EventCheck {
      */
     static isBlock(block, event) {
         const { id, location } = event.block;
-        return (
-            !id && isNaN(location.x) && isNaN(location.y) && isNaN(location.z) ||
-            id === block.typeId ||
-            (location.x === block.location.x && location.y === block.location.y && location.z === block.location.z)
-        );
+
+        if (id && id !== block.typeId) return false;
+        if (location && location.x === block.location.x && location.y === block.location.y && location.z === block.location.z) return false;
+
+        return true;
     }
 
     /**
@@ -31,14 +33,12 @@ export class EventCheck {
         const item = container?.getItem(player.selectedSlotIndex);
         const { id, name, lore } = event.item;
 
-        return (
-            (!id && !name && lore.length === 0) ||
-            (item && (
-                id === item.typeId ||
-                name === item.nameTag ||
-                (lore.length > 0 && arraysEqual(lore, item.getLore()))
-            ))
-        );
+        if (!item) return false;
+        if (id && id !== item.typeId) return false;
+        if (name && name !== item.nameTag) return false;
+        if (lore.length > 0 && !arraysEqual(lore, item.getLore())) return false;
+
+        return true;
     }
 
     /**
@@ -47,7 +47,11 @@ export class EventCheck {
      */
     static isEntity(entity, event) {
         const { id, name } = event.entity;
-        return !id && !name || id === entity.typeId || name === entity.nameTag;
+
+        if (id && id !== entity.typeId) return false;
+        if (name && name !== entity.nameTag) return false;
+
+        return true;
     }
 
     /**
@@ -56,7 +60,11 @@ export class EventCheck {
      */
     static isHitEntity(entity, event) {
         const { id, name } = event.hitEntity;
-        return !id && !name || id === entity.typeId || name === entity.nameTag;
+
+        if (id && id !== entity.typeId) return false;
+        if (name && name !== entity.nameTag) return false;
+
+        return true;
     }
 
     /**
@@ -65,7 +73,11 @@ export class EventCheck {
      */
     static isDamagingEntity(entity, event) {
         const { id, name } = event.damagingEntity;
-        return !id && !name || id === entity.typeId || name === entity.nameTag;
+
+        if (id && id !== entity.typeId) return false;
+        if (name && name !== entity.nameTag) return false;
+
+        return true;
     }
 
     /**
@@ -73,7 +85,9 @@ export class EventCheck {
      * @param {ShowEvent} event
      */
     static isDimensionId(player, event) {
-        return !event.dimensionId || player.dimension.id === event.dimensionId;
+        if (event.dimensionId && event.dimensionId !== player.dimension.id) return false;
+
+        return true;
     }
 
     /**
@@ -81,6 +95,8 @@ export class EventCheck {
      * @param {ShowEvent} event
      */
     static isTags(player, event) {
-        return event.tags.length === 0 || player.getTags().some(tag => event.tags.includes(tag));
+        if (event.tags.length > 0 && !player.getTags().some(tag => event.tags.includes(tag))) return false;
+
+        return true;
     }
 }
