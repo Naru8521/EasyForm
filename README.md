@@ -28,15 +28,19 @@
 
 フォームが表示されるイベントを編集します。
 
-## コマンドについて
-
-ModalFormの場合、コマンドで``{formValues[0]}``などを埋め込むことで入力された値をコマンドにそのまま使用することができます。
-例: /tag @s add {formValues[0]}
-
 ### プレビュー
 
 設定したフォームをプレビューすることができます。
 
 これらの設定が完了したら、作成します。
 
-作成したフォームを編集するには、``ef list``で編集したいフォームを選択します。
+## コマンドについて
+
+ModalFormの場合、コマンドで``{formValues[0]}``などを埋め込むことで入力された値をコマンドにそのまま使用することができます。
+例: /tag @s add {formValues[0]}
+
+## 使用できるコマンド
+/ef:create [PresetName]
+/ef:edit <PresetName>
+/ef:list
+/ef:run <Target> <PresetName>
